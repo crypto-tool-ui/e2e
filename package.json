@@ -1,12 +1,21 @@
 {
-  "name": "e2e",
+  "name": "csd-proxy",
   "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
+  "description": "WebSocket ↔ TCP bridge proxy for encrypted Stratum connections",
+  "main": "src/server.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "bundle": "webpack --config webpack.config.js",
+    "start:bundle": "node dist/prl-proxy.js"
   },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {}
+  "dependencies": {
+    "bufferutil": "^4.1.0",
+    "utf-8-validate": "^6.0.6",
+    "ws": "^8.16.0"
+  },
+  "devDependencies": {
+    "webpack": "^5.109.2",
+    "webpack-cli": "^7.2.2"
+  }
 }
