@@ -34,7 +34,7 @@ function walletForPool(wallet, worker) {
   return worker && !plainWallet.includes('.') && !plainWallet.includes('/') ? `${plainWallet}.${worker}` : plainWallet;
 }
 
-const wss = new WebSocketServer({ host: WS_hoHOST, port: WS_PORT });
+const wss = new WebSocketServer({ host: WS_HOST, port: WS_PORT });
 console.log(`ws://${WS_HOST}:${WS_PORT} → tcp://${TCP_HOST}:${TCP_PORT}`);
 
 wss.on('connection', (ws, req) => {
